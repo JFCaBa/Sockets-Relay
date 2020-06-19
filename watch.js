@@ -7,7 +7,6 @@ const net = new NetSocket.Socket();
 // Web socket
 wss.on('connection', function connection(ws) {
     console.log((new Date()) + ' Remote connection accepted ' + ws.remoteAddress);
-    net.write("{\"server\":\"ipad\"};");
     ws.on('message', function incoming(message) {
   //      console.log('Received from remote: %s', message);
         net.write(message)
